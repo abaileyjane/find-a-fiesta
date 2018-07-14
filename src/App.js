@@ -17,4 +17,4 @@ export class App extends Component {
 const mapStateToProps = state => ({});
 
 
-export default withRouter(connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
