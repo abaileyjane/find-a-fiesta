@@ -1,5 +1,6 @@
 import React from 'react';
 import {Nav, Navbar, Button} from 'react-bootstrap';
+import SearchBar from './searchbar.js'
 
 function goToMonday(){
 	window.location.href='/monday'
@@ -17,8 +18,9 @@ export default function NavBar(props){
 					<h1>Find a Fiesta!</h1>
 				</Navbar.Header>
 				<Nav pullRight>
-					<Button className='' onClick={}>Marg Monday</Button>
-					<Button className='' onClick={}>Taco Tuesday</Button>
+					<Button className='' onClick={()=> goToMonday()}>Marg Monday</Button>
+					<Button className='' onClick={()=> goToTuesday()}>Taco Tuesday</Button>
+					<SearchBar />
 				</Nav>
 			</Navbar>
 

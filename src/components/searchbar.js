@@ -11,7 +11,7 @@ export class SearchBar extends React.Component{
 	render(){
 		return(
 			<div className="">
-				<Geosuggest placeholder="Search places" queryDelay=0 />
+				<Geosuggest placeholder="Search places"  />
 			</div>
 		)
 	}
