@@ -7,14 +7,14 @@ import {withRouter} from 'react-router-dom';
 
 export  function SearchBar(props){
 	const handleSubmit=function(path){
-		console.log(props.day)
-		// this.props.history.push(path)
+		console.log(path)
+		props.history.push(path)
 	}
 		return(
 			<div className="">
 				
 					<Geosuggest placeholder="Search places"  />
-					<button onClick={()=>handleSubmit('/props.day')} >Find</button>
+					<button onClick={()=>handleSubmit(props.day)} >Find</button>
 				
 			</div>
 		)
@@ -28,4 +28,4 @@ const mapStateToProps = (state, props) => (
 	}
 );
 
-export default connect(mapStateToProps)(SearchBar)
+export default withRouter(connect(mapStateToProps)(SearchBar))

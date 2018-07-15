@@ -1,5 +1,5 @@
 const initialState={
-	day: 'mondayfd',
+	day: 'monday',
 	location:'san diego'
 }
 
