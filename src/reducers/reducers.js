@@ -4,8 +4,14 @@ const initialState={
 }
 
 const Reducer = (state=initialState, action) =>{
+	switch(action.type){
+		case 'SET_DAY': return Object.assign({}, state, {
+			day: action.day
+		})
+		default: return state;
+	}
 
-	 return state;
+	 
 }
 
 export default Reducer;

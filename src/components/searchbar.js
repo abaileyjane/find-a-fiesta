@@ -6,10 +6,18 @@ import {withRouter} from 'react-router-dom';
 
 
 export  function SearchBar(props){
-	const handleSubmit=function(path){
-		console.log(path)
-		props.history.push(path)
+	const handleSubmit=function(path,day){
+		console.log('handle submit ran');
+		navToNewPage(path);
 	}
+
+	const navToNewPage=function(path){
+		console.log('nav to new page ran');
+		props.history.push(path);
+	}
+	
+
+
 		return(
 			<div className="">
 				
