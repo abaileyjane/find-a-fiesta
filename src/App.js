@@ -14,7 +14,7 @@ export class App extends Component {
       <div className="App">
         <NavBar />
         <Route exact path='/' component={Homepage} />
-        <Route exact path='/results' component={ResultsPage} />
+        <Route exact path='/monday' component={ResultsPage} />
       </div>
      </Router>
     );
