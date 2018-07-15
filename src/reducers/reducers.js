@@ -1,6 +1,10 @@
-const initialState={}
+const initialState={
+	day: 'mondayfd',
+	location:'san diego'
+}
 
 const Reducer = (state=initialState, action) =>{
+
 	 return state;
 }
 

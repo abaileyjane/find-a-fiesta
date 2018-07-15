@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
@@ -10,11 +10,13 @@ import ResultsPage from './components/resultPage.js'
 export class App extends Component {
   render() {
     return (
+    <Router>
       <div className="App">
         <NavBar />
-        <Homepage />
-        <ResultsPage />
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/results' component={ResultsPage} />
       </div>
+     </Router>
     );
   }
 }

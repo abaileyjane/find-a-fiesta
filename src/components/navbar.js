@@ -1,6 +1,7 @@
 import React from 'react';
 import {Nav, Navbar, Button} from 'react-bootstrap';
-import SearchBar from './searchbar.js'
+import SearchBar from './searchbar.js';
+import {Link} from 'react-router-dom'
 
 function goToMonday(){
 	window.location.href='/monday'
@@ -15,7 +16,8 @@ export default function NavBar(props){
 	return(
 			<Navbar className=''>
 				<Navbar.Header>
-					<h1>Find a Fiesta!</h1>
+
+					<h1><Link to ='/'>Find a Fiesta!</Link></h1>
 				</Navbar.Header>
 				<Nav pullRight>
 					<Button className='' onClick={()=> goToMonday()}>Marg Monday</Button>
