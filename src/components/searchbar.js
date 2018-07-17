@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import Geosuggest from 'react-geosuggest';
 import {withRouter} from 'react-router-dom';
-import {setLocation} from '../actions';
+import {setLocation, suggSelect, suggDeselect} from '../actions';
 
 
 export  function SearchBar(props){
@@ -19,15 +19,17 @@ export  function SearchBar(props){
 
 	const changeLocation=function(value){
 		console.log('changeLocation ran', props.location);
-		props.dispatch(setLocation(value))
+		props.dispatch(setLocation(value));
+		props.dispatch(suggDeselect());
 
 	}
 
 
 	const changeLocationSuggest=function(suggest){
 		try {
-			console.log('changeLocationSuggest')
-			props.dispatch(setLocation(suggest.label));
+			console.log('changeLocationSuggest', suggest.gmaps);
+			props.dispatch(setLocation(suggest.gmaps.formatted_address));
+			props.dispatch(suggSelect())
 		}
 		catch(error){
 			console.log(error)

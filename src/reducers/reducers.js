@@ -4,7 +4,8 @@ const initialState={
 		lat: 32.7,
 		lng: -117.2
 	},
-	location:'san diego'
+	location:'san diego',
+	sugg: false
 }
 
 const Reducer = (state=initialState, action) =>{
@@ -15,6 +16,12 @@ const Reducer = (state=initialState, action) =>{
 
 		case 'SET_LOCATION': return Object.assign({}, state, {
 			location: action.location
+		})
+		case 'SUGG_SELECT': return Object.assign({}, state, {
+			sugg:true
+		})
+		case 'SUGG_DESELECT': return Object.assign({}, state, {
+			sugg:false
 		})
 		default: return state;
 	}
