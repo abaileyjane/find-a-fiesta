@@ -1,5 +1,5 @@
 const initialState={
-	day: 'monday',
+	day: '',
 	coordiates:{
 		lat: 32.7,
 		lng: -117.2

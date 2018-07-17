@@ -3,9 +3,10 @@ import {connect} from 'react-redux';
 import {Button} from 'react-bootstrap'
 
 export function SelectDayButton(props){
+
 	return(
 		<div className="{props.day}">
-			<Button>{props.day}</Button>
+			<Button onClick={props.onClick}>{props.day}</Button>
 		</div>
 		)
 }

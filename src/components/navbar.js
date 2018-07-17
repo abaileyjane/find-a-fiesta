@@ -20,6 +20,7 @@ export function NavBar(props){
 	const changeSelectedDay=function(day){
 		props.dispatch(setDay(day))
 	}
+	
 
 	return(
 			<Navbar className=''>
