@@ -9,18 +9,15 @@ import {setDay} from '../actions'
 
 export function NavBar(props){
 	const handleSubmit=function(day){
-		console.log('handle submit ran');
 		changeSelectedDay(day)
 		navToNewPage(day);
 	}
 
 	const navToNewPage=function(path){
-		console.log('nav to new page ran', path, props.day);
 		props.history.push(path);
 	}
 
 	const changeSelectedDay=function(day){
-		console.log('changeSelectedDay ran');
 		props.dispatch(setDay(day))
 	}
 
