@@ -1,14 +1,29 @@
+import {combineReducers} from 'redux';
+
+const Reducer = combineReducers({
+	settings,
+	ajaxRequest
+})
+
 const initialState={
 	day: '',
-	coordiates:{
-		lat: 32.7,
-		lng: -117.2
+	location:'',
+	sugg: false,
+	reviewsByDay:{
+		monday: {
+			isFetching: false,
+			items:[]
+		},
+
+		tuesday: {
+			isFetching: false,
+			items: []
+		}
 	},
-	location:'san diego',
-	sugg: false
+	error: false,
 }
 
-const Reducer = (state=initialState, action) =>{
+function settings(state=[], action){
 	switch(action.type){
 		case 'SET_DAY': return Object.assign({}, state, {
 			day: action.day
@@ -23,6 +38,64 @@ const Reducer = (state=initialState, action) =>{
 		case 'SUGG_DESELECT': return Object.assign({}, state, {
 			sugg:false
 		})
+		default: return state
+	}
+}
+
+function ajaxRequest(
+	state=[], 
+	action
+) {
+	switch(action.type){
+		case 'START_FETCH': return {
+			...state,
+			reviewsByDay:{
+				...state.reviewsByDay,
+				monday:{
+					...state.reviewsByDay.monday,
+					isFetching: true
+				},
+				tuesday:{
+					...state.reviewsByDay.tuesday,
+					isFetching: true
+				}
+			}
+		}
+
+		case 'FETCH_SUCCESS':  return {
+			...state,
+			reviewsByDay:{
+				monday:{
+					items:[],
+					isFetching: false
+				},
+				tuesday:{
+					items:[],
+					isFetching: false
+				}
+			},
+			error: false
+		}
+
+		case 'FETCH_FAIL': return {
+			...state,
+			reviewsByDay:{
+				...state.reviewsByDay,
+				monday:{
+					...state.reviewsByDay.monday,
+					isFetching: false
+				},
+				tuesday:{
+					...state.reviewsByDay.tuesday,
+					isFetching: false
+				}
+			},
+			error: true
+		}
+
+		case 'REQUEST_REVIEWS':
+		case 'RECIEVE_REVIEWS':
+
 		default: return state;
 	}
 

@@ -1,0 +1,3 @@
+module.exports = {
+	YELP_KEY: 'Bearer FxOb4NsHwuk8rPGJL1u8Vjk81f2fk55UuAEs1BrhZfe0F6lV0npq_1zn-kWnkZENAilkqgojfnt7A9Djq7WJxyZ3nV6jEpAgUmSCdls6iTjMpxHtGkm_EiMx6FtKW3Yx'
+}
